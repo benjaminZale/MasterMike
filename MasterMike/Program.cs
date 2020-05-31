@@ -1,22 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace MasterMike
+﻿namespace MasterMike
 {
+    using System;
+    using System.Threading;
+    using System.Windows.Forms;
+
     /// <summary>
     /// The main class of the application.
     /// </summary>
-    static class Program
+    internal static class Program
     {
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        internal static void Main()
         {
             using var mutex = new Mutex(true, "UniqueAppId", out bool isAnotherInstanceRunning);
 
@@ -29,7 +26,8 @@ namespace MasterMike
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            using var form = new Form1();
+            Application.Run(form);
 
             // Ensure mutex is not GC'ed.
             GC.KeepAlive(mutex);
