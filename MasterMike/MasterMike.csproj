@@ -6,11 +6,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Description>A application for muting / unmuting your microphone from the Windows taskbar.</Description>
-    <PublishTrimmed>true</PublishTrimmed>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <PublishSingleFile>true</PublishSingleFile>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings>
+    <!-- PublishTrimmed>true</PublishTrimmed -->
+    <!-- PublishReadyToRun>true</PublishReadyToRun -->
+    <!-- PublishSingleFile>true</PublishSingleFile -->
+    <!-- RuntimeIdentifier>win10-x64</RuntimeIdentifier -->
+    <!-- PublishReadyToRunShowWarnings>true</PublishReadyToRunShowWarnings -->
   </PropertyGroup>
 
   <ItemGroup>
