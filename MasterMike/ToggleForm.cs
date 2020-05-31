@@ -1,4 +1,4 @@
-﻿namespace IconTest
+﻿namespace MasterMike
 {
     using System;
     using System.Windows.Forms;

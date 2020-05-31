@@ -1,4 +1,4 @@
-﻿namespace IconTest
+﻿namespace MasterMike
 {
     partial class ToggleForm
     {

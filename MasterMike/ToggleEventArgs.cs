@@ -1,4 +1,4 @@
-﻿namespace IconTest
+﻿namespace MasterMike
 {
     /// <summary>
     /// The event parameters for when the state changes.
