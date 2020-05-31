@@ -29,7 +29,7 @@
                     captureDevice.AudioEndpointVolume.MasterVolumeLevelScalar = level.Value;
                 }
 
-                if (level.HasValue && captureDevice.AudioEndpointVolume.Mute != mute.Value)
+                if (mute.HasValue && captureDevice.AudioEndpointVolume.Mute != mute.Value)
                 {
                     captureDevice.AudioEndpointVolume.Mute = mute.Value;
                 }
