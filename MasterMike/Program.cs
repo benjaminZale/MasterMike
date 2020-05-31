@@ -3,6 +3,7 @@
     using System;
     using System.Threading;
     using System.Windows.Forms;
+    using IconTest;
 
     /// <summary>
     /// The main class of the application.
@@ -26,7 +27,7 @@
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using var form = new Form1();
+            using var form = new ToggleForm();
             Application.Run(form);
 
             // Ensure mutex is not GC'ed.
