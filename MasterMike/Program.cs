@@ -2,6 +2,7 @@
 {
     using System;
     using System.Threading;
+    using System.Timers;
     using System.Windows.Forms;
 
     /// <summary>
@@ -9,6 +10,8 @@
     /// </summary>
     internal static class Program
     {
+        internal static Settings Settings;
+
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -23,11 +26,19 @@
                 return;
             }
 
+            Settings = Settings.LoadSettings("Settings.json");
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using var form = new MicEnableForm();
-            Application.Run(form);
+            using var form = new MicEnableForm()
+            {
+                Settings = Settings,
+            };
+            using (PeriodicSettingsRefresher periodicSettingsRefresher = new PeriodicSettingsRefresher())
+            {
+                Application.Run(form);
+            }
 
             // Ensure mutex is not GC'ed.
             GC.KeepAlive(mutex);

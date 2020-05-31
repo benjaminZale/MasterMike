@@ -25,6 +25,11 @@
             OnToggleStatChanged += MicEnableForm_OnToggleStatChanged;
         }
 
+        /// <summary>
+        /// Gets or sets the application settings.
+        /// </summary>
+        internal Settings Settings { get; set; }
+
         /// <inheritdoc />
         protected override void Dispose(bool disposing)
         {
@@ -35,17 +40,24 @@
             unmuteIcon.Dispose();
         }
 
+        /// <summary>
+        /// When fired the mute / unmute state changes.
+        /// </summary>
+        /// <param name="sender">The sender of the request.</param>
+        /// <param name="e">Toggle state event arguments.</param>
         private void MicEnableForm_OnToggleStatChanged(object sender, ToggleEventArgs e)
         {
             if (e.ToggleState)
             {
                 Text = "Select to Unmute";
                 Icon = muteIcon;
+                Settings.IsMuted = true;
             }
             else
             {
                 Text = "Select to Mute";
                 Icon = unmuteIcon;
+                Settings.IsMuted = false;
             }
         }
     }
