@@ -31,7 +31,7 @@
             {
                 settings = new Settings
                 {
-                    LineLevel = 50,
+                    LineLevel = 0.50F,
                 };
                 SaveSettings(settings, path);
             }

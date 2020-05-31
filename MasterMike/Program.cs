@@ -10,7 +10,10 @@
     /// </summary>
     internal static class Program
     {
-        internal static Settings Settings;
+        /// <summary>
+        /// Gets or sets the application settings.
+        /// </summary>
+        internal static Settings Settings { get; set; }
 
         /// <summary>
         ///  The main entry point for the application.

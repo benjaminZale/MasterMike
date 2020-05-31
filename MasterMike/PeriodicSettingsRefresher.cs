@@ -38,12 +38,12 @@
 
         private void Unmute(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine("Unmute");
+            AudioUtilities.LockAudio(null, false);
         }
 
         private void UpdateMikeSettings(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"Update: {Program.Settings.IsMuted}, {Program.Settings.LineLevel}");
+            AudioUtilities.LockAudio(Program.Settings.LineLevel, Program.Settings.IsMuted);
         }
     }
 }
