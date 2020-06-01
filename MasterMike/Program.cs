@@ -29,6 +29,8 @@
                 return;
             }
 
+            // For some strange reason Garbage Collection is not called.  Force it to run every 15 seconds.
+            using var periodicGarbageCollection = new PeriodicGarbageCollection(TimeSpan.FromSeconds(15));
             Settings = Settings.LoadSettings("Settings.json");
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
